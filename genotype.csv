@@ -1,0 +1,3 @@
+sample_name,snpprobeset_id,snp_strand,allelea_orig,alleleb_orig,illumina_Alleles,symbol,gene_strand,chrom,chrom_start,chrom_end,allelea,alleleb
+C00060,exm1002141,+,A,G,AG,CERS5,-,chr12,50537814,50537815,A,G
+C00060,exm1002260,-,G,C,CG,FAM186A,-,chr12,50727705,50727706,C,G
