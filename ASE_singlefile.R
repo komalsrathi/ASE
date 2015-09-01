@@ -22,10 +22,10 @@ print(p)
 system(p) 
 
 #different columns per line bc of indels
-no_col <- max(count.fields("bamreadcount_output_test.txt", sep = "\t")) 
+no_col <- max(count.fields(outfile, sep = "\t")) 
 
 #read in bamreadcount output
-bamreadcounts <- read.table("bamreadcount_output_test.txt",sep="\t",fill=TRUE,col.names=1:no_col,check.names=F) 
+bamreadcounts <- read.table(outfile,sep="\t",fill=TRUE,col.names=1:no_col,check.names=F) 
 
 #separate contents of columns 6-9 using based on ':'
 x <- colsplit2df(bamreadcounts[,c(1:4,6:9)],c(5:8),sep=":") 
@@ -68,5 +68,3 @@ colnames(gt.merge)[32] <- "p_adjust"
 
 #write output
 write.csv(gt.merge[,c(1:10,12:15,28:32)],"output_results_test.csv",row.names=F,quote=F)
-
-
