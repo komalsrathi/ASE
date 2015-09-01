@@ -1,0 +1,3 @@
+chrom,chrom_end,sample_name,snpprobeset_id,snp_strand,allelea_orig,alleleb_orig,illumina_Alleles,symbol,gene_strand,allelea,alleleb,ref,depth,alleleA_freq,alleleB_freq,X-squared,p.value,p_adjust
+chr1,101704532,C00060,rs3737577,-,A,C,AC,S1PR1,+,T,G,G,131,61,70,0.618320610687023,0.431672042916167,0.757359403208794
+chr1,10438687,C00060,rs1536262,-,G,A,AG,KIF1B,+,C,T,C,26,11,15,0.615384615384615,0.432767580667785,0.757359403208794
