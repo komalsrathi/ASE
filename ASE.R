@@ -93,3 +93,4 @@ myfunction <- function(arg1)
 # dt is the genotype file
 # split dt by sample_name (in my case 64 samples)
 ddply(dt,.(sample_name),myfunction,.parallel=TRUE)
+
