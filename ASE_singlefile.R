@@ -68,3 +68,6 @@ colnames(gt.merge)[32] <- "p_adjust"
 
 #write output
 write.csv(gt.merge[,c(1:10,12:15,28:32)],"output_results_test.csv",row.names=F,quote=F)
+
+# csv files obtained in such manner are then merged together in one file -> all_results_merged.csv
+# that is the input to ASE_pchisq.R
