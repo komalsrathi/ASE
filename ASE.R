@@ -94,3 +94,5 @@ myfunction <- function(arg1)
 # split dt by sample_name (in my case 64 samples)
 ddply(dt,.(sample_name),myfunction,.parallel=TRUE)
 
+# csv files obtained in such manner are then merged together in one file -> all_results_merged.csv
+# that is the input to ASE_pchisq.R
