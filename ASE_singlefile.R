@@ -1,15 +1,14 @@
 #######################################################################
 cat(noquote("\nAllele Specific Expression:\n"))
-cat(noquote("\nUsage:Rscript <rscript.r> <infile-name.bam> <outfile-name.txt>"))
+cat(noquote("\nUsage:Rscript ASE_singlefile.R <infile-name.bam> <outfile-name.txt>"))
 
 library(qdap)
 library(data.table)    
 
-# have to include the below changes
 # use arguments instead of hard coded file names
-# args <- commandArgs(TRUE)
-# infile <- args$arg1
-# outfile <- args$arg2
+args <- commandArgs(TRUE)
+infile <- args[1]
+outfile <- args[2]
 
 #read in genotype file
 gt<-read.csv("genotype.csv")
@@ -18,7 +17,9 @@ gt<-read.csv("genotype.csv")
 write.table(gt[,c(9,11,11)],"input_test.bed",row.names=F,quote=F,sep="\t",col.names=F) 
 
 #run bam-readcount program, filtered by base quality > 20
-system("bam-readcount -b 20 -l input_test.bed -f hg19.fa C00060_filter_sort.bam > bamreadcount_output_test.txt") 
+p <- paste("bam-readcount -b 20 -l input_test.bed -f hg19.fa",infile,">",outfile,sep=" ")
+print(p)
+system(p) 
 
 #different columns per line bc of indels
 no_col <- max(count.fields("bamreadcount_output_test.txt", sep = "\t")) 
